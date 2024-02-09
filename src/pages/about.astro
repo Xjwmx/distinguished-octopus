@@ -1,4 +1,7 @@
 ---
+
+import '../styles/globals.css';
+
 const pageTitle = "About"
 
 const identity = {
@@ -9,6 +12,14 @@ const identity = {
 };
 
 const skills = ["writing",  "editing", "photography", "birdwatching", "baseball"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
+
+const skillColor = "green";
+
+
 ---
 
 <html lang="en">
@@ -18,6 +29,7 @@ const skills = ["writing",  "editing", "photography", "birdwatching", "baseball"
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+
 	</head>
 	<body>
 
@@ -42,7 +54,13 @@ const skills = ["writing",  "editing", "photography", "birdwatching", "baseball"
         </ul>
         <p>My Skills are:</p>
         <ul>
-            {skills.map((skill) => <li>{skill}</li>)}
+            {skills.map((skill) => <li class="skill">{skill}</li>)}
         </ul>
+
+        {happy && <p>I am happy to be learning Astro!</p>}
+
+        {finished && <p>I finished this tutorial!</p>}
+
+        {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
 	</body>
 </html>
